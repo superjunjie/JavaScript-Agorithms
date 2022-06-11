@@ -2,6 +2,7 @@
  * 
  * @param {string} s 
  * @returns s
+ * @description https://leetcode.cn/problems/longest-palindromic-substring/
  */
 
 function longestPalindrome(s) {
