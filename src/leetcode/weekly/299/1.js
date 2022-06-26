@@ -1,3 +1,7 @@
+/**
+ * @param {number[][]} grid
+ * @return {boolean}
+ */
 var checkXMatrix = function (grid) {
     const n = grid.length
     for (let i = 0; i < n; i++) {
@@ -9,6 +13,3 @@ var checkXMatrix = function (grid) {
     }
     return true
 };
-
-const ans = checkXMatrix([[2, 0, 0, 1], [0, 3, 1, 0], [0, 5, 2, 0], [4, 0, 0, 2]])
-console.log(ans)
