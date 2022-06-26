@@ -2,6 +2,7 @@
  * @param {number[]} nums
  * @param {number[][]} edges
  * @return {number}
+ * @link https://leetcode.cn/problems/minimum-score-after-removals-on-a-tree/
  */
 var minimumScore = function (nums, edges) {
     const n = nums.length
