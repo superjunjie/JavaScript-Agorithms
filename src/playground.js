@@ -1,14 +1,26 @@
-var checkXMatrix = function (grid) {
-    const n = grid.length
+/**
+ * @param {string[]} nums
+ * @param {number[][]} queries
+ * @return {number[]}
+ */
+var smallestTrimmedNumbers = function (nums, queries) {
+    const n = queries.length
+    const len = nums[0].length
+    const ans = []
     for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n; j++) {
-            const diagonal = (i === j || i + j === n - 1)
-            if (diagonal && grid[i][j] === 0) return false
-            else if (!diagonal && grid[i][j] !== 0) return false
+        const tmp = []
+        for (let j = 0; j < nums.length; j++) {
+            tmp.push(nums[j].substring(len - queries[i][1]))
         }
+        const arr = [...tmp]
+        arr.sort()
+        const num = arr[queries[i][0] - 1]
+        ans.push(tmp.indexOf(num))
     }
-    return true
-};
+    return ans
+}
 
-const ans = checkXMatrix([[2, 0, 0, 1], [0, 3, 1, 0], [0, 5, 2, 0], [4, 0, 0, 2]])
+const ans = smallestTrimmedNumbers(
+    ["24", "37", "96", "04"],
+    [[2, 1], [2, 2]])
 console.log(ans)
