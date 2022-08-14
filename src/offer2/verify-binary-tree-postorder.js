@@ -16,3 +16,20 @@ var verifyPostorder = function (postorder) {
     }
     return recur(0, postorder.length - 1)
 }
+/**
+ * 
+ * @param {*} postorder 
+ * @returns 
+ * @method 辅助栈
+ */
+var verifyPostorder = function (postorder) {
+    const stack = []
+    let root = Number.MAX_VALUE
+    for (let i = postorder.length - 1; i >= 0; i--) {
+        if (postorder[i] > root) return false
+        while (stack.length && postorder[i] < stack[stack.length - 1])
+            root = stack.pop()
+        stack.push(postorder[i])
+    }
+    return true
+}
