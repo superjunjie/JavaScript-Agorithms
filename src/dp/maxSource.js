@@ -1,6 +1,8 @@
 /**
  * @param {string} s
  * @return {number}
+ * @link https://leetcode.cn/problems/maximum-score-after-splitting-a-string/
+ * @method 动态规划
  */
 var maxScore = function (s) {
     let len = s.length
@@ -15,4 +17,3 @@ var maxScore = function (s) {
     }
     return Math.max(...res)
 }
-maxScore('011101')
